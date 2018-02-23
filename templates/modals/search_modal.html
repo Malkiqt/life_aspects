@@ -1,0 +1,83 @@
+
+
+<div id="search_modal" ng-show='modal_show'>
+
+		<div id="modal_content" ng-show='modal_show'>
+
+			<div class="modal-header">
+
+				 <button ng-click='modal_show=false' type="button" class="close" data-dismiss="modal">&times;</button>
+
+				 <h4 class="modal-title">Search</h4>
+
+			</div>
+
+			<div class="modal-body">
+
+				<form id='search_form' ng-submit='modal_show=false;search_result(search_input)'>
+ 
+					<div id='form_input_container'>
+						<input ng-model='search_input' class='form_input' type='text' placeholder='Search'>
+					</div>						
+
+					<div class='button_container'>
+						<button class='form_submit styled_button' type='submit'>
+							Find
+						</button>
+					</div>
+
+				</form>
+
+			</div>
+
+			<div class="modal-footer">
+			</div>
+
+		 </div>
+
+</div>
+
+<!--
+<div id="search_modal" ng-show='modal_show'>
+
+
+	<div>
+
+		<div class="modal-content">
+
+			<div class="modal-header">
+
+				 <button ng-click='modal_show=false' type="button" class="close" data-dismiss="modal">&times;</button>
+
+				 <h4 class="modal-title">Search</h4>
+
+			</div>
+
+			<div class="modal-body">
+
+				<form id='search_form' ng-submit='modal_show=false;search_result(search_input)'>
+ 
+					<div id='form_input_container'>
+						<input ng-model='search_input' class='form_input' type='text' placeholder='Search'>
+					</div>						
+
+					<div class='button_container'>
+						<button class='form_submit styled_button' type='submit'>
+							Find
+						</button>
+					</div>
+
+				</form>
+
+			</div>
+
+			<div class="modal-footer">
+			</div>
+
+		 </div>
+
+	</div>
+
+</div>
+
+-->

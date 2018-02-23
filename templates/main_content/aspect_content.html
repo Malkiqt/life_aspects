@@ -1,0 +1,51 @@
+<div ng-show='show_dashboard' id='aspect_header' class='header col-xs-12'>
+	<div id='perfect_future' class='col-md-6 col-xs-12'>
+		<h4>Perfect Future</h4>
+		<textarea ng-blur='update_future_view()' ng-model='aspects[content_info["aspect"]].positive_view' class='form_input create_textarea future_textarea col-xs-12'></textarea>
+	</div>
+	<div id='worst_future' class='col-md-6 col-xs-12'>
+		<h4>Worst Future</h4>
+		<textarea ng-blur='update_future_view()' ng-model='aspects[content_info["aspect"]].negative_view' class='form_input create_textarea future_textarea col-xs-12'></textarea>
+	</div>
+</div>
+
+<div id='aspect_body' class='body col-xs-12'>
+
+	<div ng-show='show_dashboard' id='goal_list' class='col-xs-12'>
+		<!--<div ng-repeat='(goal_key,goal_value) in goals' ng-click='set_obj("goal",goal_value);content_button_clicked("goal",goal_value.name)' class='post_container goal_container col-xs-12'>-->
+		<div ng-repeat='(goal_key,goal_value) in goals'  class='post_container goal_container col-md-4 col-xs-12'>
+			<goal></goal>
+			
+		</div>
+	</div>
+
+	<div ng-show='!show_dashboard' id='goal_create' class='create_form_container'>
+		<form ng-submit='create_goal(create_goal_name,create_goal_usefulness,create_goal_strategy,create_goal_description)'>
+
+ 
+			<div id='form_input_container'>
+				<label class='form_info'>Name</label><br>
+				<input required ng-model='create_goal_name' class='form_input ' type='text' placeholder='Goal Name'>
+			</div>	
+			<div id='form_input_container'>
+				<label class='form_info'>Usefulness</label><br>
+				<textarea required ng-model='create_goal_usefulness' class='form_input create_textarea' placeholder='How is it useful?'></textarea>
+			</div>
+			<div id='form_input_container'>
+				<label class='form_info'>Strategy</label><br>
+				<textarea required ng-model='create_goal_strategy' class='form_input create_textarea' placeholder='Strategy'></textarea>
+			</div>
+			<div id='form_input_container'>
+				<label class='form_info'>Description</label><br>
+				<textarea required ng-model='create_goal_description' class='form_input create_textarea' placeholder='Description'></textarea>
+			</div>
+
+			<div class='button_container'>
+				<button class='form_submit styled_button' type='submit'>Submit</button>
+			</div>
+
+
+
+		</form>
+	</div>
+</div>

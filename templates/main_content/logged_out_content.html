@@ -1,0 +1,31 @@
+
+<div id='logout_forms' class='col-md-6 col-xs-12'>
+
+	<div id='login_container' class='col-md-12 col-xs-12'>
+		<h3>Login</h3>
+		<form  ng-submit='login(login.username,login.password)'>
+			<input required class='form_input'type='text' ng-model='login.username' placeholder='Username'><br> 
+			<input required class='form_input'type='password' ng-model='login.password' placeholder='Password'><br>
+			<div class='button_container'>
+				<button class='form_submit styled_button' type='submit'>Submit</button>
+			</div>
+		</form>				
+	</div>
+
+
+	<div id='register_container' class='col-md-12 col-xs-12'>
+		<h3>Register</h3>
+		<form  ng-submit='register(register.username,register.password,register.repeat_password)'>
+			<input required class='form_input' type='text' ng-model='register.username' placeholder='Username'><br>
+			<input required class='form_input'type='password' ng-model='register.password' placeholder='Password'><br>
+			<input required class='form_input'type='password' ng-model='register.repeat_password' placeholder='Reapeat Password'><br>
+			<div class='button_container'>
+				<button class='form_submit styled_button' type='submit'>Submit</button>
+			</div>
+		</form>				
+	</div>	
+</div>	
+
+<div id='main_image_container' class='col-md-6 col-xs-12'>
+	<img id='main_image' src='images/main_image.jpg'>	
+</div>

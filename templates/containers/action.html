@@ -1,0 +1,7 @@
+<div class='post action completed_{{action_value.completed}}'>
+	<div ng-click='set_obj("action",action_value);content_button_clicked("action",action_value.name)' class='post_info col-md-8 col-xs-12'> 
+		<span>{{ action_value.name }} :</span><br>
+		<span>{{ action_value.description }}</span><br>
+	</div>
+	<button ng-click='delete_action(action_value.id)' class='delete_button'>Delete</button>
+</div>

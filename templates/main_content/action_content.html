@@ -1,0 +1,59 @@
+
+<div id='action_body' class='col-xs-12'>
+
+
+	<form id='update_action' ng-submit='update_action(current_action_obj.id,current_action_obj.name,current_action_obj.scope,current_action_obj.reason,current_action_obj.challenge,current_action_obj.description,current_action_obj.deadline,current_action_obj.conclusion,current_action_obj.completed)'>
+
+	
+				<div id='form_input_container'>
+					<label class='form_info'>Name</label><br>
+					<input required ng-model='current_action_obj.name' class='form_input' value='ACTION NAME'>
+				</div>	
+				 
+				<div id='form_input_container'>
+					<label class='form_info'>Scope</label><br>
+					<textarea required ng-model='current_action_obj.scope'  class='form_input create_textarea' placeholder='Scope'></textarea>
+				</div>
+
+				<div id='form_input_container'>
+					<label class='form_info'>Reason</label><br>
+					<textarea required ng-model='current_action_obj.reason' class='form_input create_textarea' placeholder='Reason'></textarea>
+				</div>
+
+				<div id='form_input_container'>
+					<label class='form_info'>Challenge</label><br>
+					<textarea required ng-model='current_action_obj.challenge' class='form_input create_textarea' placeholder='Challenge'></textarea>
+				</div>
+
+				<div id='form_input_container'>
+					<label class='form_info'>Description</label><br>
+					<textarea required ng-model='current_action_obj.description' class='form_input create_textarea' placeholder='Description'></textarea>
+				</div>
+
+				<div id='form_input_container'>
+					<label class='form_info'>Deadline</label><br>
+					<input required ng-model='current_action_obj.deadline' type='text' class='form_input' placeholder='Deadline'>
+				</div>							
+
+				<div class='button_container'>
+					<button  type='button' class='styled_button' ng-click='current_action_obj.completed=!current_action_obj.completed'>
+						{{ completed_message[current_action_obj.completed] }} 
+					</button>
+				</div>
+
+				<div id='form_input_container' ng-show='current_action_obj.completed'>
+					<label class='form_info'>Conclusion</label><br>
+					<textarea ng-required='current_action_obj.completed' ng-model='current_action_obj.conclusion' class='form_input create_textarea' placeholder='Conclusion'></textarea>
+				</div>	
+				
+				<div class='button_container'>
+					<button class='form_submit styled_button' type='submit'>Submit</button>
+				</div>
+
+	</form>
+
+</div>
+
+
+
+

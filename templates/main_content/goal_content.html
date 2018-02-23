@@ -1,0 +1,108 @@
+
+<div ng-show='show_dashboard' id='goal_header' class='header col-xs-12'>
+
+
+	<form id='update_goal' ng-submit='update_goal(current_goal_obj.id,current_goal_obj.name,current_goal_obj.usefulness,current_goal_obj.strategy,current_goal_obj.description,current_goal_obj.conclusion,current_goal_obj.completed)'>
+		<div id='individual_goal' class='col-xs-12'>
+			<div id='individual_goal_header' class='col-xs-12'>	 
+				<div id='form_input_container'>
+					<label class='form_info'>Goal</label><br>
+					<input required ng-model='current_goal_obj.name' class='form_input' value='SELECTED GOAL NAME'>
+				</div>	
+				<div class='button_container'>
+					<button type='button' class='styled_button' ng-click='current_goal_obj.extended=!current_goal_obj.extended'>
+						Extend
+					</button>
+				</div>
+			</div>
+			<div ng-show='current_goal_obj.extended' id='individual_goal_extended' class='extended col-xs-12'>
+				<div id='form_input_container'>
+					<label class='form_info'>Usefulness</label><br>
+					<textarea required ng-model='current_goal_obj.usefulness' class='form_input create_textarea' placeholder='How is it Helpful'></textarea>
+				</div>
+				<div id='form_input_container'>
+					<label class='form_info'>Strategy</label><br>
+					<textarea required ng-model='current_goal_obj.strategy' class='form_input create_textarea' placeholder='Strategy'></textarea>
+				</div>
+				<div id='form_input_container'>
+					<label class='form_info'>Description</label><br>
+					<textarea required ng-model='current_goal_obj.description' class='form_input create_textarea' placeholder='Description'></textarea>
+				</div>
+
+				<div class='button_container'>
+					<button type='button' class='styled_button' ng-click='current_goal_obj.completed=!current_goal_obj.completed'>
+						{{ completed_message[current_goal_obj.completed] }} 
+					</button>
+				</div>
+				<div id='form_input_container' ng-show='current_goal_obj.completed'>
+					<label class='form_info'>Conclusion</label><br>
+					<textarea ng-required='current_goal_obj.completed' ng-model='current_goal_obj.conclusion' class='form_input create_textarea' placeholder='Conclusion'></textarea>
+				</div>
+
+				<div class='button_container'>
+					<button class='form_submit styled_button' type='submit'>Update</button>
+				</div>
+			</div>
+			
+		</div>
+	</form>
+
+	
+</div>
+
+<div id='goal_body' class='body col-xs-12'>
+
+
+	<div ng-show='show_dashboard' id='action_list' class='col-xs-12'>
+		<!--<div ng-show='!current_goal_obj.extended' ng-repeat='(action_key,action_value) in actions' class='post_container action_container' class='col-md-12 col-xs-12'>-->
+		<div ng-repeat='(action_key,action_value) in actions' class='post_container action_container' class='col-md-12 col-xs-12'>
+			<action></action>
+		</div>
+	</div>
+
+
+	<div ng-show='!show_dashboard' id='action_create' class='create_form_container'>
+
+
+		<form ng-submit='create_action(create_action_name,create_action_scope,create_action_reason,create_action_challenge,create_action_description,create_action_deadline)'>
+
+
+			<div id='form_input_container'>
+				<label class='form_info'>Name</label><br>
+				<input required ng-model='create_action_name' type='text' class='form_input' placeholder='Action Name'>
+			</div>	
+			 
+			<div id='form_input_container'>
+				<label class='form_info'>Scope</label><br>
+				<textarea requiredng-model='create_action_scope' class='form_input create_textarea' placeholder='Scope'></textarea>
+			</div>
+
+			<div id='form_input_container'>
+				<label class='form_info'>Reason</label><br>
+				<textarea requiredng-model='create_action_reason' class='form_input create_textarea' placeholder='Reason'></textarea>
+			</div>
+
+			<div id='form_input_container'>
+				<label class='form_info'>Challenge</label><br>
+				<textarea requiredng-model='create_action_challenge' class='form_input create_textarea' placeholder='Challenge'></textarea>
+			</div>
+
+			<div id='form_input_container'>
+				<label class='form_info'>Description</label><br>
+				<textarea requiredng-model='create_action_description' class='form_input create_textarea' placeholder='Description'></textarea>
+			</div>
+
+			<div id='form_input_container'>
+				<label class='form_info'>Deadline</label><br>
+				<input requiredng-model='create_action_deadline' type='text' class='form_input' placeholder='Deadline'>
+			</div>							
+			
+			<div class='button_container'>
+				<button class='form_submit styled_button' type='submit'>Submit</button>
+			</div>
+
+
+		</form>
+	</div>
+
+</div>

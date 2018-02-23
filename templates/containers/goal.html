@@ -1,0 +1,8 @@
+<div class='post goal completed_{{goal_value.completed}}'>
+	<div ng-click='set_obj("goal",goal_value);content_button_clicked("goal",goal_value.name)' class='post_info col-md-8 col-xs-12'>
+		<span>{{ goal_value.name }} :</span><br>
+		<span>{{ goal_value.description }}</span><br>
+	</div>
+
+	<button ng-click='delete_goal(goal_value.id)' class='delete_button'>Delete</button>
+</div>
